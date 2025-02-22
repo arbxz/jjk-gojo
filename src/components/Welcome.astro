@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
       <div
         class="relative flex flex-col justify-center items-center text-right flex-1 z-40 p-4"
       >
-        <div class="max-w-[80%]">
+        <div class="md:max-w-[80%]">
           <p class="text-blue-950 text-5xl xl:text-7xl">
             ごめん あまない 俺は今お前のために怒ってない
           </p>
@@ -43,6 +43,7 @@ import { Icon } from "astro-icon/components";
         />
       </div>
     </section>
+
     <footer class="fixed bottom-0 w-full p-4 z-40">
       <img
         src="https://res.cloudinary.com/drmfq65cw/image/upload/v1740234250/jjk-logo_yjapbo.png"
@@ -57,31 +58,16 @@ import { Icon } from "astro-icon/components";
       width="0"
       height="0"
       src="https://www.youtube.com/embed/I8LvlOwRqbs?si=ItxR1Zowdg-JbFEk&autoplay=1&loop=1"
-      allow="autoplay"
       title="YouTube video player"
-      frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen></iframe>
-    <!-- <iframe
-      id="musicIframe"
-      width="0"
-      height="0"
-      src="https://www.youtube.com/embed/fvOeih7T3dc?&autoplay=1&loop=1"
-      allow="autoplay"
-      allowfullscreen></iframe> -->
   </main>
 </div>
 
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-<script>
-  const playButton = document.getElementById("playButton");
-  const iframe = document.getElementById("musicIframe");
-  if (playButton && iframe)
-    playButton.onclick = function () {
-      alert("play");
-    };
-</script>
+<script></script>
+
 <style>
   body {
     font-family: "Zen Kaku Gothic New", sans-serif;
