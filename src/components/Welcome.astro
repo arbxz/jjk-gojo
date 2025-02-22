@@ -1,12 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <div id="container">
   <main class="select-none">
     <section class="flex w-screen h-screen overflow-hidden">
       <div
-        class="relative flex justify-center items-center text-right flex-1 z-40 p-4"
+        class="relative flex flex-col justify-center items-center text-right flex-1 z-40 p-4"
       >
-        <p class="max-w-[80%] text-blue-950 text-5xl xl:text-7xl">
-          ごめん あまない 俺は今お前のために怒ってない
-        </p>
+        <div class="max-w-[80%]">
+          <p class="text-blue-950 text-5xl xl:text-7xl">
+            ごめん あまない 俺は今お前のために怒ってない
+          </p>
+          <div class="inline-block">
+            <a
+              href="https://open.spotify.com/track/3kTia7ayynt7DvMq1y77jC?si=d3tGUftfRcq3a9iFy7GrIw"
+              target="_blank"
+              id="playButton"
+              class="flex gap-4 items-center rounded-full py-2 px-4 border-2 border-blue-950 text-blue-900 mt-16 ml-auto cursor-pointer hover:bg-blue-900 hover:text-white transition-all duration-200"
+            >
+              <Icon name="mdi:spotify" width="24" height="24" /> 音楽のみを再生
+            </a>
+          </div>
+        </div>
       </div>
 
       <div class="absolute top-0 left-0 w-screen h-screen glass-white z-30">
@@ -18,16 +34,26 @@
         >
           <img
             class="object-cover h-full w-full"
-            src="/public/gojo-amanai-shell-2.png"
+            src="https://res.cloudinary.com/drmfq65cw/image/upload/v1740234251/gojo-amanai-shell-2_hzbnmc.png"
           />
         </div>
         <img
           class="w-screen h-screen object-cover bg-center"
-          src="/public/gojo-amanai.jpg"
+          src="https://res.cloudinary.com/drmfq65cw/image/upload/v1740234251/gojo-amanai_btbrdo.jpg"
         />
       </div>
     </section>
-    <!-- <iframe
+    <footer class="fixed bottom-0 w-full p-4 z-40">
+      <img
+        src="https://res.cloudinary.com/drmfq65cw/image/upload/v1740234250/jjk-logo_yjapbo.png"
+        alt="Jujutsu Kaisen"
+        class="h-8 mx-auto"
+      />
+      <p class="text-center text-blue-950 font-extrabold text-lg mt-4">
+        2025 &copy; <a target="_blank" href="https://www.arbxz.dev"></a>arbxz
+      </p>
+    </footer>
+    <iframe
       width="0"
       height="0"
       src="https://www.youtube.com/embed/I8LvlOwRqbs?si=ItxR1Zowdg-JbFEk&autoplay=1&loop=1"
@@ -36,12 +62,26 @@
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    <!-- <iframe
+      id="musicIframe"
+      width="0"
+      height="0"
+      src="https://www.youtube.com/embed/fvOeih7T3dc?&autoplay=1&loop=1"
+      allow="autoplay"
       allowfullscreen></iframe> -->
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/fvOeih7T3dc?&autoplay=1&loop=1" allow="autoplay" allowfullscreen></iframe>
   </main>
 </div>
 
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script>
+  const playButton = document.getElementById("playButton");
+  const iframe = document.getElementById("musicIframe");
+  if (playButton && iframe)
+    playButton.onclick = function () {
+      alert("play");
+    };
+</script>
 <style>
   body {
     font-family: "Zen Kaku Gothic New", sans-serif;
@@ -61,7 +101,7 @@
   }
 
   .custom-bounce {
-    animation: custom-bounce 5s ease infinite;
+    animation: custom-bounce 10s ease infinite;
   }
   @keyframes custom-bounce {
     0% {
