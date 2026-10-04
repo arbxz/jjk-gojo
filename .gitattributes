@@ -1,0 +1,2 @@
+# Prettier formats with LF; keep the working tree LF on Windows too.
+* text=auto eol=lf
